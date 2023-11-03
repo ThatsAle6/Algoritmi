@@ -11,13 +11,13 @@ def verifica(a:AlberoBin, b:AlberoBin, k=int)->bool:
     if a is None or b is None:
         return False
     if a.sin is None and a.des is None:
-        return nonFogliaB(a.val, b) >= k
+        return nonFogliaB(a.val, b) >= k    
     
     return verifica(a.sin, b, k) and verifica(a.des, b, k)
 
 def nonFogliaB(b:AlberoBin, radice:int)->int:
     if b is None:
-        return False
+        return 0
     if b.sin is not None and b.des is not None: #verifico che non sia un nodo foglia
         return conta(b, radice, 0)
     
